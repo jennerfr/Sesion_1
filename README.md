@@ -25,22 +25,22 @@ class(var.logical)
 typeof(vector)
 typeof(var.number)
 
-# Crear vectores 
+#### Crear vectores 
 a <- c(4, 6, 8, 10,12)
 b <- c(3, 5, 7, 9)
 
-# Para saber la dimensión del vector 
+#### Para saber la dimensión del vector 
 length(a)
 length(b)
 
-#Se puede acceder a las coordenadas de un vector haciendo uso de [] y su posición
+#### Se puede acceder a las coordenadas de un vector haciendo uso de [] y su posición
 a[1]
 b[4]
 
-# Juntar 2 vectores 
+#### Juntar 2 vectores 
 c(a,b)
 
-# Organizarlos con el comando sort(), cambia la F por T y observa que ocurre
+#### Organizarlos con el comando sort(), cambia la F por T y observa que ocurre
 sort( c(a,b), decreasing = F)
 
 # Otra forma de generar el vector es de la siguiente manera, utilizando ":"
