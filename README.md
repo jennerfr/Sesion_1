@@ -7,6 +7,14 @@ Repositorio de la nueva sesión 1. BEDU
 ########################      Objetos en R      ########################
 ########################################################################
 
+#### SALUDO
+
+# Bienvenida
+
+```R
+Inicio <- "Hola amigo"
+paste(Inicio, "Mejores deseos")
+```
 
 ####   EJEMPLO 1
 #Tipos de datos y Vectores
