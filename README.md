@@ -75,8 +75,9 @@ vector.by3
 #Para repetir un número o un vector un determinado número de ocasiones utilizamos rep()
 ```
 rep(5, times = 6)
-
+```
 #Observa que hace el siguiente comando con los vectores **a** y **b**
+```
 rep(a, 2)
 rep(b, 3)
 ```
