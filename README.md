@@ -106,45 +106,60 @@ m <- matrix(1:9, nrow = 3, ncol = 3)
 m
 ```
 #### Extrayendo la primera entrada
-``` m[1,1] ```
+``` 
+m[1,1]
+```
 
-# Extrayendo la primer columna, con todas sus filas
+#### Extrayendo la primer columna, con todas sus filas
+```
 m[ ,1]
-
-# ¿Qué sucede si se suma un vector y una matriz?
+```
+#### ¿Qué sucede si se suma un vector y una matriz?
+```
 sum.vecmat <- c(1,2) + m
+```
 
-# Creando otra matriz
-
+#### Creando otra matriz
+```
 n <- matrix(2:7, 4, 6)
-
-# Podemos conocer la dimensión de la matriz así 
+```
+#### Podemos conocer la dimensión de la matriz así 
+```
 dim(n)
+```
 
-#Extrayendo subconjuntos de la matriz
-n[n > 4]
+#### Extrayendo subconjuntos de la matriz
+```
+n[n > 4] 
+```
 
-# Ahora veremos como localizar la posición de las entradas anteriores
+#### Ahora veremos como localizar la posición de las entradas anteriores
+```
 which(n > 4)
+```
 
-
-# Uniendo Vectores para formar una matriz
-
+#### Uniendo Vectores para formar una matriz
+```
 a <- 2:6
 b <- 5:9
-
-# Construyendo la matriz utilizando el comando cbind(), para unirlos por culumna
+```
+#### Construyendo la matriz utilizando el comando cbind(), para unirlos por culumna
+```
 cbind(a,b)
+```
 
-# Construyendo la matriz utilizando el comando rbind(), para unirlos por fila
+#### Construyendo la matriz utilizando el comando rbind(), para unirlos por fila
+```
 rbind(a,b)
-
-#Aplicando una función a una fila o columna de una matriz 
+```
+#### Aplicando una función a una fila o columna de una matriz (mean, sort) 
+```
 apply(n, 2, mean)
 
 apply(n, 2, sort)
+```
 
-   Algunas operaciones básicas de matrices 
+####   Algunas operaciones básicas de matrices 
    - 1. Producto matricial: A %*% B
    - 2. Producto elemento a elemento: A*B
    - 3. Traspuesta: t(A)  
@@ -156,95 +171,125 @@ apply(n, 2, sort)
 
 
 ##### Ejemplo 3. Listas y data frames
-#Listas 
+#### Listas 
+```
 milista <- list(nombre = "Pepe", no.hijos = 3, edades.hijos = c(4, 7, 9))
+```
 
 #propiedades de la lista
+```
 str(milista)
-
-#Extrayendo elementos de la lista
+```
+#### Extrayendo elementos de la lista
+```
 milista$nombre
+```
 
-
-#DATA FRAMES
-
+###DATA FRAMES
+```
 x <- 6:8
 y <- c("A", "B", "C")
 mifile <- data.frame(edad = x, grupo = y)
 mifile
 
 str(mifile)
+```
 
-#Extrayendo información del df, se hace igual que con las matrices
+#### Extrayendo información del df, se hace igual que con las matrices
+```
 mifile[1]
 mifile[,1]
 mifile$edad
-
-#Calculando algunos estadísticos básicos
+```
+#### Calculando algunos estadísticos básicos
+```
 mean(mifile$edad)
+```
 
-# Podemos hacer uso de la función paste() para agregar un mensaje
+#### Podemos hacer uso de la función paste() para agregar un mensaje
+```
 paste("La media de la edad es:", mean(mifile$edad))
+```
 
-# Podemos inspeccionar a detalle el df utilizando summary()
+#### Podemos inspeccionar a detalle el df utilizando summary()
+```
 summary(mifile)
-
-# También se puede conocer su dimensión 
+```
+#### También se puede conocer su dimensión 
+```
 dim(mifile)
-
-#Podemos agregar una columna extra con datos 
+```
+#### Podemos agregar una columna extra con datos 
+```
 mifile$sexo <- c("H", "M", "H")
 mifile
+```
 
-# Si fuera el caso, se puede eliminar una columna 
+#### Si fuera el caso, se puede eliminar una columna 
+```
 mifile$sexo <- NULL
 mifile
+```
+## Ejemplo 4. Descarga y lectura de DataSets.
+#### Se pueden obtener diversos data sets de Kaggle, visita el sitio para que te familiarices
+#### La siguiente es ua base de datos de los libros más vendidos en Amazon del 2009 - 2019
 
-##### Ejemplo 4. Descarga y lectura de DataSets.
-# Se pueden obtener diversos data sets de Kaggle, visita el sitio para que te familiarices
-# La siguiente es ua base de datos de los libros más vendidos en Amazon del 2009 - 2019
-
-#Obtenemos la ruta del directorio de trabajo
+#### Obtenemos la ruta del directorio de trabajo
+```
 getwd()
-
-#Fijando el directorio de trabajo
+```
+#### Fijando el directorio de trabajo
+```
 setwd("c:/Users/User/Documents/Bedu/")
-
-# El comando read.csv() será util para leer fichero .csv
+```
+#### El comando read.csv() será util para leer fichero .csv
+```
 read.csv("../Bedu/Data/bestsellers with categories.csv")
-
-#se puede asignar a un objeto el fichero leido anteriormente
+```
+#### se puede asignar a un objeto el fichero leido anteriormente
+```
 amazon.books <- read.csv("../Bedu/Data/bestsellers with categories.csv")
+```
 
-# Calculamos la dimensión de la base de datos
+#### Calculamos la dimensión de la base de datos
+```
 dim(amazon.books)
+```
 
-# El tipo de objeto se puede saber utilizando class() 
+#### El tipo de objeto se puede saber utilizando class() 
+```
 class(amazon.books)
+```
 
+## Ejemplo 5. Instalar packages y leerlos, esto es útil ya qu agrega funcionalidades a
+#### R, ya sea para graficar o generar análisis con diversas técnicas.
 
-#### Ejemplo 5. Instalar packages y leerlos, esto es útil ya qu agrega funcionalidades a
-# R, ya sea para graficar o generar análisis con diversas técnicas.
+#### Se instalan de la siguiente manera
 
-# Se instalan de la siguiente manera
+```
 install.packages("ggplot2")    #siempre lleva  comillas
-
-# Una vez que se instalo, se debe de cargar 
+```
+#### Una vez que se instalo, se debe de cargar 
+```
 library(ggplot2)                # Se omite el uso de las comillas
-
-# Otro ejemplo
+```
+#### Otro ejemplo
+```
 install.packages("dplyr")
 library(dplyr)
+```
+#### También se puede realizar esta acción en la pestaña de Packages 
 
-# También se puede realizar esta acción en la pestaña de Packages 
 
+## Ejemplo 6. Loops: For
 
-#### Ejemplo 6. Loops: For
-
+#### Este ejemplo elevará al cuadrado las primeros 10 entradas de un vector generado aleatóriamente de 20 entradas 
+```
 w <- rnorm(20)              
 print("Este loop calcula el cuadrado de los 10 primeros elementos del vector w")
-
-# inicializando la varialbe `wsq`
+```
+#### inicializando la varialbe `wsq`
+```
 wsq <- 0
 
 for(i in 1:10) {
@@ -252,3 +297,4 @@ for(i in 1:10) {
   wsq[i] <- w[i]**2
   print(wsq[i])
 }
+```
