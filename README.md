@@ -51,20 +51,20 @@ b[4]
 ```
 sort( c(a,b), decreasing = F)
 ```
-# Otra forma de generar el vector es de la siguiente manera, utilizando ":"
+#### Otra forma de generar el vector es de la siguiente manera, utilizando ":"
 ```
 3:12  #así de sencillo es
 ```
 
-# Intenta los siguientes y prueba con otras que se te vengan a la imaginación
+#### Intenta los siguientes y prueba con otras que se te vengan a la imaginación
 ```
 10:1
 1:1000
 0:10
 ```
 
-# También se pueden generar vectores que no sean sucesivos con el comando seq()
-#intenta cambiar los parametros y observa el comportamiento de los vectores
+#### También se pueden generar vectores que no sean sucesivos con el comando **seq()**
+####intenta cambiar los parametros y observa el comportamiento de los vectores
 ```
 vector.by2 <- seq(from = 1, to = 10, by =2)
 vector.by2
@@ -72,21 +72,24 @@ vector.by2
 vector.by3 <- seq(1, 10, 3)
 vector.by3
 ```
-#Para repetir un número o un vector un determinado número de ocasiones utilizamos rep()
+#### Para repetir un número o un vector un determinado número de ocasiones utilizamos rep()
 ```
 rep(5, times = 6)
 ```
-#Observa que hace el siguiente comando con los vectores **a** y **b**
+#### Observa que hace el siguiente comando con los vectores **a** y **b**
 ```
 rep(a, 2)
 rep(b, 3)
 ```
 
-#Reciclaje, al hacer operaciones entre vectores, R repetirá los valores del vector, 
-# hasta alcanzar la dimensión requerida
+####Reciclaje, al hacer operaciones entre vectores, R repetirá los valores del vector, 
+#### hasta alcanzar la dimensión requerida
+``` 
 c(1, 2) + c(7, 8, 9, 10)
+```
 
-#Operaciones entre vectores
+#### Operaciones entre vectores
+```
 a + b     
 a - b     
 a*b
@@ -94,15 +97,16 @@ a/b
 a^2
 a1 <- a*0.5 + b^2
 a1[1]
+```
 
-
-####      EJEMPLO 2. Matrices
-# Crear Matrices. Como se lee -> m[fila, columna]
+##      EJEMPLO 2. Matrices
+##### Crear Matrices. Como se lee -> m[fila, columna]
+```
 m <- matrix(1:9, nrow = 3, ncol = 3)
 m
-
-#Extrayendo la primera entrada
-m[1,1]
+```
+#### Extrayendo la primera entrada
+``` m[1,1] ```
 
 # Extrayendo la primer columna, con todas sus filas
 m[ ,1]
