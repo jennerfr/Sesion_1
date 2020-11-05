@@ -10,46 +10,51 @@ Repositorio de la nueva sesión 1. BEDU
 
 ####   EJEMPLO 1
 #Tipos de datos y Vectores
-```
+
 var.hola <- "Hola Mundo"
 var.number <- 5
 var.double <- 2.7076
 var.logical <- T
 vector <- c(1,2)
-```
-#### Verificar la naturaleza de las variables
-```
+
 class(var.number)
 class(var.hola)
 class(var.double)
 class(var.logical)
-```
+
 typeof(vector)
 typeof(var.number)
 
 #### Crear vectores 
+
 ```
 a <- c(4, 6, 8, 10,12)
 b <- c(3, 5, 7, 9)
 ```
+
 #### Para saber la dimensión del vector 
 ```
 length(a)
 length(b)
 ```
+
 #### Se puede acceder a las coordenadas de un vector haciendo uso de [] y su posición
 ```
 a[1]
 b[4]
 ```
+
 #### Juntar 2 vectores 
 ```c(a,b)```
 
 #### Organizarlos con el comando sort(), cambia la F por T y observa que ocurre
-```sort( c(a,b), decreasing = F)```
-
+```
+sort( c(a,b), decreasing = F)
+```
 # Otra forma de generar el vector es de la siguiente manera, utilizando ":"
-```3:12```  #así de sencillo es
+```
+3:12  #así de sencillo es
+```
 
 # Intenta los siguientes y prueba con otras que se te vengan a la imaginación
 ```
@@ -63,8 +68,7 @@ b[4]
 ```
 vector.by2 <- seq(from = 1, to = 10, by =2)
 vector.by2
-```
-```
+
 vector.by3 <- seq(1, 10, 3)
 vector.by3
 ```
@@ -72,16 +76,16 @@ vector.by3
 ```
 rep(5, times = 6)
 
+#Observa que hace el siguiente comando con los vectores **a** y **b**
 rep(a, 2)
 rep(b, 3)
 ```
 
 #Reciclaje, al hacer operaciones entre vectores, R repetirá los valores del vector, 
 # hasta alcanzar la dimensión requerida
-```c(1, 2) + c(7, 8, 9, 10)```
+c(1, 2) + c(7, 8, 9, 10)
 
 #Operaciones entre vectores
-```
 a + b     
 a - b     
 a*b
@@ -89,24 +93,21 @@ a/b
 a^2
 a1 <- a*0.5 + b^2
 a1[1]
-```
+
 
 ####      EJEMPLO 2. Matrices
 # Crear Matrices. Como se lee -> m[fila, columna]
-```
 m <- matrix(1:9, nrow = 3, ncol = 3)
 m
-```
+
 #Extrayendo la primera entrada
-```
 m[1,1]
-```
+
 # Extrayendo la primer columna, con todas sus filas
-```
 m[ ,1]
-```
+
 # ¿Qué sucede si se suma un vector y una matriz?
-```sum.vecmat <- c(1,2) + m```
+sum.vecmat <- c(1,2) + m
 
 # Creando otra matriz
 
