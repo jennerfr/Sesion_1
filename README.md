@@ -27,7 +27,7 @@ typeof(var.number)
 
 #### Crear vectores 
 
-```
+``` R
 a <- c(4, 6, 8, 10,12)
 b <- c(3, 5, 7, 9)
 ```
