@@ -109,54 +109,54 @@ m <- matrix(1:9, nrow = 3, ncol = 3)
 m
 ```
 #### Extrayendo la primera entrada
-``` 
+``` RR
 m[1,1]
 ```
 
 #### Extrayendo la primer columna, con todas sus filas
-```
+```R
 m[ ,1]
 ```
 #### ¿Qué sucede si se suma un vector y una matriz?
-```
+```R
 sum.vecmat <- c(1,2) + m
 ```
 
 #### Creando otra matriz
-```
+```R
 n <- matrix(2:7, 4, 6)
 ```
 #### Podemos conocer la dimensión de la matriz así 
-```
+```R
 dim(n)
 ```
 
 #### Extrayendo subconjuntos de la matriz
-```
+```R
 n[n > 4] 
 ```
 
 #### Ahora veremos como localizar la posición de las entradas anteriores
-```
+```R
 which(n > 4)
 ```
 
 #### Uniendo Vectores para formar una matriz
-```
+```R
 a <- 2:6
 b <- 5:9
 ```
 #### Construyendo la matriz utilizando el comando cbind(), para unirlos por culumna
-```
+```R
 cbind(a,b)
 ```
 
 #### Construyendo la matriz utilizando el comando rbind(), para unirlos por fila
-```
+```R
 rbind(a,b)
 ```
 #### Aplicando una función a una fila o columna de una matriz (mean, sort) 
-```
+```R
 apply(n, 2, mean)
 
 apply(n, 2, sort)
@@ -175,12 +175,12 @@ apply(n, 2, sort)
 
 ##### Ejemplo 3. Listas y data frames
 #### Listas 
-```
+```R
 milista <- list(nombre = "Pepe", no.hijos = 3, edades.hijos = c(4, 7, 9))
 ```
 
 #propiedades de la lista
-```
+```R
 str(milista)
 ```
 #### Extrayendo elementos de la lista
@@ -189,7 +189,7 @@ milista$nombre
 ```
 
 ###DATA FRAMES
-```
+```R
 x <- 6:8
 y <- c("A", "B", "C")
 mifile <- data.frame(edad = x, grupo = y)
@@ -199,37 +199,37 @@ str(mifile)
 ```
 
 #### Extrayendo información del df, se hace igual que con las matrices
-```
+```R
 mifile[1]
 mifile[,1]
 mifile$edad
 ```
 #### Calculando algunos estadísticos básicos
-```
+```R
 mean(mifile$edad)
 ```
 
 #### Podemos hacer uso de la función paste() para agregar un mensaje
-```
+```R
 paste("La media de la edad es:", mean(mifile$edad))
 ```
 
 #### Podemos inspeccionar a detalle el df utilizando summary()
-```
+```R
 summary(mifile)
 ```
 #### También se puede conocer su dimensión 
-```
+```R
 dim(mifile)
 ```
 #### Podemos agregar una columna extra con datos 
-```
+```RR
 mifile$sexo <- c("H", "M", "H")
 mifile
 ```
 
 #### Si fuera el caso, se puede eliminar una columna 
-```
+```R
 mifile$sexo <- NULL
 mifile
 ```
@@ -238,29 +238,29 @@ mifile
 #### La siguiente es ua base de datos de los libros más vendidos en Amazon del 2009 - 2019
 
 #### Obtenemos la ruta del directorio de trabajo
-```
+```R
 getwd()
 ```
 #### Fijando el directorio de trabajo
-```
+```R
 setwd("c:/Users/User/Documents/Bedu/")
 ```
 #### El comando read.csv() será util para leer fichero .csv
-```
+```R
 read.csv("../Bedu/Data/bestsellers with categories.csv")
 ```
 #### se puede asignar a un objeto el fichero leido anteriormente
-```
+```RR
 amazon.books <- read.csv("../Bedu/Data/bestsellers with categories.csv")
 ```
 
 #### Calculamos la dimensión de la base de datos
-```
+```R
 dim(amazon.books)
 ```
 
 #### El tipo de objeto se puede saber utilizando class() 
-```
+```R
 class(amazon.books)
 ```
 
@@ -269,15 +269,15 @@ class(amazon.books)
 
 #### Se instalan de la siguiente manera
 
-```
+```R
 install.packages("ggplot2")    #siempre lleva  comillas
 ```
 #### Una vez que se instalo, se debe de cargar 
-```
+```R
 library(ggplot2)                # Se omite el uso de las comillas
 ```
 #### Otro ejemplo
-```
+```R
 install.packages("dplyr")
 library(dplyr)
 ```
@@ -287,12 +287,12 @@ library(dplyr)
 ## Ejemplo 6. Loops: For
 
 #### Este ejemplo elevará al cuadrado las primeros 10 entradas de un vector generado aleatóriamente de 20 entradas 
-```
+```R
 w <- rnorm(20)              
 print("Este loop calcula el cuadrado de los 10 primeros elementos del vector w")
 ```
 #### inicializando la varialbe `wsq`
-```
+```R
 wsq <- 0
 
 for(i in 1:10) {
